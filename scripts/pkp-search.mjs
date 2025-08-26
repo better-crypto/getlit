@@ -10,9 +10,13 @@ export async function pkpSearchFunc({ args }) {
   }
 
   // 175177 is outdated, change it to 175188
+  //
+  // https://yellowstone-rpc.litprotocol.com/
+  //
   // https://developer.litprotocol.com/connecting-to-a-lit-network/lit-blockchains/chronicle-yellowstone
   let rpcProvider = new providers.JsonRpcProvider(
-    'https://chain-rpc.litprotocol.com/http',
+    // 'https://chain-rpc.litprotocol.com/http',
+    'https://yellowstone-rpc.litprotocol.com/',
     175188
   );
   let contractsClient = bootstrapClient(rpcProvider);

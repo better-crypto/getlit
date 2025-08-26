@@ -4,7 +4,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import bodyParser from 'body-parser';
-import { getLitProjectMetaData, greenLog, projectCreated, redLog } from '../utils.mjs';
+import {
+  getLitProjectMetaData,
+  greenLog,
+  projectCreated,
+  redLog,
+} from '../utils.mjs';
 import fs from 'fs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,7 +18,6 @@ const app = express();
 
 //
 export const setupFunc = async () => {
-
   // -- validate
   const paths = await projectCreated();
 
@@ -35,12 +39,18 @@ export const setupFunc = async () => {
 
     const proj = await getLitProjectMetaData();
 
+    //
+    // TODO X: 对应 getlit.json
+    //
     const configFile = proj.dir + '/' + LIT_CONFIG.configFile;
 
     const configFileJson = JSON.parse(
       await fs.promises.readFile(configFile, 'utf8')
     );
 
+    //
+    //
+    //
     configFileJson.authSig = authSig;
     configFileJson.pkpPublicKey = pkpPublicKey;
 

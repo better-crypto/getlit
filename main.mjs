@@ -17,6 +17,8 @@ import { createNextFunc } from './scripts/create-next-app.mjs';
 import { createReactFunc } from './scripts/create-react-app.mjs';
 
 const args = getArgs();
+
+// TODO X: 配置文件
 globalThis.LIT_CONFIG = readProjectJsonFile('lit.config.json');
 
 let COMMAND = args[0];

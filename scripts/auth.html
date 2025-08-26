@@ -130,11 +130,22 @@
 
 
     (async () => {
+
+
+      //
+      // https://developer.litprotocol.com/network/networks/testnet
+      //
       // console.log(LitJsSdk_litNodeClient);
       const client = new LitJsSdk_litNodeClient.LitNodeClient({
-        litNetwork: 'serrano',
+        // litNetwork: 'serrano', // datil-dev
+        litNetwork: 'datil-dev',
       })
 
+
+      console.log("current client:", client);
+      //
+      //
+      //
       const authSig = await LitJsSdk_litNodeClient.checkAndSignAuthMessage({ chain: 'ethereum' });
 
       const authSigStr = JSON.stringify(authSig);
