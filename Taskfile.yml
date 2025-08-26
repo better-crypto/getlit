@@ -17,6 +17,12 @@ dotenv:
 ################################################################################################
 
 tasks:
+  i:dev:
+    aliases: ["id", "i:d"]
+    cmds:
+      - bun remove --global getlit
+      - bun install --global https://github.com/better-crypto/getlit.git#dev-0827
+
   count:
     cmds:
       - tokei # 代码统计: https://github.com/XAMPPRocky/tokei
