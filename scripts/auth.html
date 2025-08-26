@@ -132,13 +132,18 @@
     (async () => {
 
 
+      const litNetwork = 'datil-dev';
+      console.log("litNetwork:", litNetwork);
+
+
+
       //
       // https://developer.litprotocol.com/network/networks/testnet
       //
       // console.log(LitJsSdk_litNodeClient);
       const client = new LitJsSdk_litNodeClient.LitNodeClient({
         // litNetwork: 'serrano', // datil-dev
-        litNetwork: 'datil-dev',
+        litNetwork: litNetwork,
       })
 
 
