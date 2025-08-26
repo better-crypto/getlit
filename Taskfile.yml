@@ -33,6 +33,12 @@ tasks:
       - task: cc
       - task: push
 
+  quick:dev:
+    aliases: ["qd"]
+    cmds:
+      - task: cc
+      - task: push:dev
+
   # usage: task rc -- 2
   rc:
     aliases: ["reset:commit"]
@@ -62,4 +68,9 @@ tasks:
   push:
     cmds:
       - git push origin main --tags
+      - repo_url=`git remote -v | grep push | awk -F ":" '{print $2}' | awk -F ".git" '{print "https://github.com/"$1}'`; open $repo_url
+
+  push:dev:
+    cmds:
+      - git push origin dev-0827:dev-0827
       - repo_url=`git remote -v | grep push | awk -F ":" '{print $2}' | awk -F ".git" '{print "https://github.com/"$1}'`; open $repo_url
